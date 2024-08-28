@@ -13,5 +13,101 @@
 \usepackage{venndiagram}
 
 \begin{document}
-\section*{Page 55 #5}
+\section*{Page 55 \#5}
+
+~
+
+\begin{align*}
+    a:\ &A=\{FSS,SFS,SSF\}\\
+    b:\ &B=\{FSS,SFS,SSF,SSS\}\\
+    c:\ &C=\{SSS,SFS,SSF\}\\
+    d:\ &C'=\{FFF,SFF,FSF,FFS,FSS\}\\
+    &A\cup C=\{SSS,SFS,SSF,FSS\}\\
+    &A\cap C=\{SFS,SSF\}\\
+    &B\cup C=\{FSS,SFS,SSF,SSS\}\\
+    &B\cap C=\{SSS,SFS,SSF\}\\
+\end{align*}
+
+\newpage
+
+\section*{Page 65 \#23}
+
+~
+
+\begin{align*}
+    a:\ &P(A_M\cap H_H)=0.10\\
+    b:\ &P(A_L)=0.04+0.05+0.06+0.03=0.18\\
+    &P(H_L)=0.06+0.10+0.03=0.19\\
+    c:\ &P(A=H)=(A_L\cap H_L)+P(A_M\cap H_M)+P(A_H\cap H_H)\\
+    &=0.06+0.20+0.15\\
+    &=0.41\\
+    d:\ &P(A\ne H)=1-P(A=H)=1-0.41=0.59\\
+    e:\ &P(L)=P(A_L\cup H_L)=P(A_L)+P(H_L)-P(A_L\cap H_L)\\
+    &=0.18+0.19-0.06=0.31\\
+    f:\ &P(\neg L)=1-P(L)=1-0.31=0.69\\
+\end{align*}
+
+\newpage
+
+\section*{Page 82 \#50}
+
+~
+
+\begin{align*}
+    a:\ &P(L\cap Pr\cap M)=0.05\\
+    b:\ &P(M\cap Pr)=P(L\cap Pr\cap M)+P(S\cap Pr\cap M)=0.05+0.07=0.12\\
+    c:\ &P(S)=0.04+0.02+0.05+0.08+0.07+0.12+0.03+0.07+0.08=0.56\\
+    &P(L)=1-P(S)=1-0.56=0.44\\
+    d:\ &P(M)=0.08+0.07+0.12+0.10+0.05+0.07=0.49\\
+    &P(Pr)=0.02+0.07+0.07+0.02+0.05+0.02=0.25\\
+    e:\ &P(M|S\cap Pl)=\frac{P(M\cap S\cap Pl)}{P(S\cap Pl)}=\frac{0.08}{0.04+0.08+0.03}=\frac{8}{15}\\
+    f:\ &P(S|M\cap Pl)=\frac{P(S\cap M\cap Pl)}{P(M\cap Pl)}=\frac{0.08}{0.08+0.10}=\frac{4}{9}\\
+    &P(L|M\cap Pl)=1-P(S|M\cap Pl)=1-\frac{4}{9}=\frac{5}{9}\\
+\end{align*}
+
+\newpage
+
+\section*{Page 84 \#65}
+
+~
+
+\begin{align*}
+    &P(L_1\cap \#1)=P(L_1|\#1)P(\#1)\\
+    &=(0.3\times (1-0.1)+(1-0.3)\times 0.1)(0.5)=0.17\\
+    &P(L_1\cap \#2)=P(L_1|\#2)P(\#2)\\
+    &=(0.25\times (1-0.2)+(1-0.25)\times 0.2)(0.3)=0.105\\
+    &P(L_1\cap \#3)=P(L_1|\#3)P(\#3)\\
+    &=(0.40\times (1-0.25)+(1-0.40)\times 0.25)(0.2)=0.09\\
+    &P(L_1)=P(L_1\cap \#1)+P(L_1\cap \#2)+P(L_1\cap \#3)\\
+    &=0.17+0.105+0.09=0.365\\
+    &P(\#1|L_1)=\frac{P(L_1\cap \#1)}{P(L_1)}=\frac{0.17}{0.365}\approx 0.4658\\
+    &P(\#2|L_1)=\frac{P(L_1\cap \#2)}{P(L_1)}=\frac{0.105}{0.365}\approx 0.2878\\
+    &P(\#3|L_1)=\frac{P(L_1\cap \#3)}{P(L_1)}=\frac{0.09}{0.365}\approx 0.2466\\
+\end{align*}
+
+\newpage
+
+\section*{Page 89 \#71}
+
+~
+
+\begin{align*}
+    &P(0_{0.1})=(1-0.1)^{10}=0.348678\\
+    &P(1_{0.1})=(1-0.1)^9\times0.1=0.038742\\
+    &P(0_{p})=(1-p)^n\\
+    &P(1_{p})=(1-p)^{n-1}\cdot p\\
+\end{align*}
+
+\newpage
+
+\section*{Page 91 \#85}
+
+~
+
+\begin{align*}
+    a:\ &P(L_1)=\frac{500}{500+400+600}=\frac{1}{3}\\
+    &P(C)=\frac{0.5\times500+0.44\times 400+0.40\times 600}{1500}=\frac{666}{1500}=0.444\\
+    b:\ &P(B|L_1)=\frac{P(B\cap L_1)}{P(L_1)}=0.15\\
+    c:\ &P(L_1|S)=\frac{P(L_1\cap S)}{P(S)}=\frac{0.1\times \frac{1}{3}}{\frac{0.1\times 500+0.08\times 400+0.15\times 600}{1500}}\approx0.2907\\
+\end{align*}
 \end{document}
