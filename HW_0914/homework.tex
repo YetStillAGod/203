@@ -1,0 +1,151 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{systeme}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{venndiagram}
+\usepackage{pgfplots}
+\usetikzlibrary{pgfplots.statistics}
+\pgfplotsset{compat=newest}
+
+\begin{document}
+\section*{Question 1}
+
+~
+
+\begin{align*}
+    &P(t_5\geqslant24)=P(t_4<24)\\
+    &X=\#\text{ of students arriving in 24 minutes}\\
+    &\lambda =24\div 4=6\\
+    \Rightarrow&X\sim \text{Poisson}(\lambda =6)\\
+    &P(t_5\geqslant 24)=P(t_4<24)=\text{ppois}(4,\lambda =6)=0.285\\
+\end{align*}
+
+\newpage
+
+\section*{Question 2}
+
+~
+
+\begin{align*}
+    &p=\text{passengers showing up}\\
+    &P(p\leqslant 95)=1-P(95<p\leqslant 100)\\
+    &=1-\sum_{x=0}^{4}\binom{100}{x}0.05^x(1-0.05)^{100-x}\\
+    &X=\#\text{ of passengers that do not show up}\\
+    &n=100\\
+    &p=0.05\\
+    &X\sim \text{Binomial}(n=100,p=0.05)\\
+    &P(95<p\leqslant 100)=P(X<5)\\
+    \Rightarrow&P(X\geqslant5)=1-P(X<5)=1-\sum_{x=0}^{4}\binom{100}{x}0.05^x(1-0.05)^{100-x}\\
+    &=1-\text{pbinom}(4,\text{size}=100,\text{prob}=0.05)=0.564\\
+\end{align*}
+
+\newpage
+
+\section*{Question 3}
+
+~
+
+\begin{align*}
+    &X=\# \text{ of calls from the 30 minutes}\\
+    &\lambda=4\times \frac{30}{60}=2\\
+    &X\sim \text{Poisson}(\lambda =2)\\
+    \Rightarrow&P(X=0)=\text{dpois}(0,2)=0.135\\
+\end{align*}
+
+\newpage
+
+\section*{Question 4}
+
+~
+
+\begin{align*}
+    &X=\text{runtime of the batteries}\\
+    &\mu=120\\
+    &\sigma=20\\
+    &X\sim N(\mu=120,\sigma=20)\\
+    &P(X>147)=1-P(x\leqslant147)=1-P(\frac{x-120}{20}\leqslant\frac{147-120}{20})\\
+    &=1-P(z\leqslant 1.35)=1-0.9115=0.0885\\
+\end{align*}
+
+\newpage
+
+\section*{Question 5}
+
+~
+
+\begin{align*}
+    &X=\text{the time for the first plane to land}\\
+    &\lambda=8\div 60=\frac{2}{15}\\
+    &X\sim \text{Exp}(\lambda=\frac{2}{15})\\
+    &P(X<7)=\text{pexp}(q=7,\text{rate}=0.133)=0.606\\
+\end{align*}
+
+~
+
+\newpage
+
+\section*{Page 127 \# 49 a}
+
+~
+
+\begin{align*}
+    &E[X]={M_X}'(0)=(4t+5)e^{5t+2t^2}=5\\
+    &V[X]=E[X^2]-E[X]^2={M_X}''(0)-({M_X}'(0))^2\\
+    &E[X^2]={M_X}''(0)=4e^{5t+2t^2}+e^{5t+2t^2}(5+4t)^2=4+25=29\\
+    &V[X]=E[X^2]-E[X]^2=4\\
+\end{align*}
+
+~
+
+\section*{Page 127 \# 44}
+
+~
+
+\begin{align*}
+    &M_X(t)=0.04e^{0t}+0.2e^{1t}+0.34e^{2t}+0.2e^{3t}+0.15e^{4t}+0.04e^{5t}+0.03e^{6t}\\
+    &E[X]={M_X}'(0)=0.2e^t+0.68e^{2t}+0.6e^{3t}+0.6e^{4t}+0.2e^{5t}+0.18e^{6t}\\
+    &=0.2+0.68+0.6+0.6+0.2+0.18=2.46\\
+    &E[X^2]={M_X}''(0)=0.2e^t+1.36e^{2t}+1.8e^{3t}+2.4e^{4t}+e^{5t}+1.08e^{6t}\\
+    &=0.2+1.36+1.8+2.4+1+1.08=7.84\\
+    &V[X]=E[X^2]-{E[X]}^2=7.84-2.46^2=1.7884\\
+\end{align*}
+
+~
+
+\section*{Page 136 \# 64 c}
+
+~
+
+\begin{align*}
+    &n=10\\
+    &p=0.6\\
+    &X=\# \text{ of people want the oversize ball}\\
+    &X\sim \text{Binomial}(m=10,p=0.6)\\
+    &P(X\leqslant 7)=\sum_{x=0}^{7}\binom{10}{x}0.6^x(1-0.6)^{10-x}\\
+    &=0.833\\
+\end{align*}
+
+~
+
+\section*{Page 151 \# 97 b}
+
+~
+
+\begin{align*}
+    &p=\frac{1}{200}=0.005\\
+    &n=1000\\
+    &\lambda =np=5\\
+    &X=\# \text{ of people carrying the gene}\\
+    &X\sim \text{exp}(5)\\
+    &P(X\geqslant 8)=1-P(x<7)=1-\sum_{x=0}^{7}\frac{5^xe^{-5}}{x!}\\
+    &=1-0.867=0.133\\
+\end{align*}
+\end{document}
