@@ -1,0 +1,184 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{systeme}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{venndiagram}
+\usepackage{pgfplots}
+\usetikzlibrary{pgfplots.statistics}
+\pgfplotsset{compat=newest}
+
+\begin{document}
+\section*{Question 1}
+
+~
+
+\subsection*{a}
+
+~
+
+\begin{align*}
+    &\mu=\sum[X\cdot P(X)]\\
+    &=25\times0.2+40\times0.5+65\times0.3=44.5\\
+    &E[\overline{X}]=\sum(\overline{X}\times P[\overline{X}])\\
+    &=(25\times0.04+32.5\times0.2+40\times 0.25+45\times0.12+52.5\times 0.3+65\times0.09)\\
+    &=44.5\\
+    \Rightarrow&E[\overline{X}]=\mu\\
+\end{align*}
+
+~
+
+\subsection*{b}
+
+~
+
+\begin{align*}
+    &\sigma^2=E[X^2]-E[X]^2\\
+    &=\sum(x^2P(X=x))-(\sum(xP(X=x)))^2\\
+    &=2192.5-1980.25\\
+    &=212.25\\
+    &E[S^2]=\sum(S^2P(S^2))\\
+    &=0\times(0.04+0.25+0.09)+2\times7.5^2\times0.2+2\times12.5^2\times0.3+2\times20^2\times0.12\\
+    &=212.25\\
+    \Rightarrow&E[S^2]=\sigma^2\\
+\end{align*}
+
+\newpage
+
+\section*{Question 3}
+
+~
+
+\subsection*{a}
+
+~
+
+It is not plausible that the distribution is normal. The median is smaller than the mean and the distribution is not symmetric. The distribution is right skewed. So it is not normal.
+
+~
+
+\subsection*{b}
+
+~
+
+\begin{align*}
+    &P(\overline{X}\geqslant 86.3)\\
+    =&1-P(\overline{X}<86.3)\\
+    =&1-P(\frac{\overline{X}-85}{\frac{15}{\sqrt{277}}}<\frac{86.3-85}{\frac{15}{\sqrt{277}}})\\
+    =&1-P(z<1.4424)\\
+    =&1-0.9254\\
+    =&0.0746\\
+\end{align*}
+
+~
+
+\subsection*{c}
+
+~
+
+\begin{align*}
+    &P(\overline{X}\geqslant 86.3)\\
+    =&1-P(\overline{X}<86.3)\\
+    =&1-P(\frac{\overline{X}-82}{\frac{15}{\sqrt{277}}}<\frac{86.3-82}{\frac{15}{\sqrt{277}}})\\
+    =&1-P(z<4.7711)\\
+    =&1-0.9999\\
+    =&0\\
+\end{align*}
+
+~
+
+The probability is almost 0, which is not the case of the sample, so it is not a reasonable value for $\mu$.
+
+\newpage
+
+\section*{Question 4}
+
+~
+
+\begin{align*}
+    &\mu=18\%\\
+    &\sigma=6\%\\
+    &X\sim N(\mu=18,\sigma=6)\\
+    &n=40\\
+    &P(16\leqslant\overline{X}\leqslant19)\\
+    =&P(\frac{16-18}{\frac{6}{\sqrt{40}}}\leqslant\frac{\overline{X}-18}{\frac{6}{\sqrt{40}}}\leqslant\frac{19-18}{\frac{6}{\sqrt{40}}})\\
+    =&P(-2.11\leqslant z\leqslant 1.05)\\
+    =&P(z\leqslant1.05)-p(z\leqslant -2.11)\\
+    =&0.8531-0.0174\\
+    =&0.8357\\
+\end{align*}
+
+\newpage
+
+\section*{Question 5}
+
+~
+
+\begin{align*}
+    &\sigma=1\\
+    &\mu=10\\
+    &X\sim N(\mu=10,\sigma=1)\\
+    &n=4\\
+    &4\times10=40\\
+    &P(z>\frac{x-40}{\frac{1}{2}})=0.05\\
+    &P(z>2(x-40))=0.05\\
+    &P(z\leqslant2(x-40))=0.95\\
+    &\Phi(2(x-40))=0.95\\
+    &2(x-40)=1.645\\
+    &x=40.8225\\
+\end{align*}
+
+\newpage
+
+\section*{Question 7}
+
+~
+
+\begin{align*}
+    &\mu_{X_1}=2\\
+    &\sigma_{X_1}=1.5\\
+    &{\sigma_{X_1}}^2=2.25\\
+    &\mu_{X_2}=\text{9:10}-\text{9:00}=10\\
+    &\sigma_{X_2}=1\\
+    &{\sigma_{X_2}}^2=1\\
+    &\mu_{X_3}=6\\
+    &\sigma_{X_3}=1\\
+    &{\sigma_{X_3}}^2=1\\
+    &T:\text{time need to make to the second class after first class ends}\\
+    &\mu_T=\mu_{X_1}+\mu_{X_3}=2+6=8\\
+    &{\}sigma_T}^2={\sigma_{X_1}}^2+{\sigma_{X_3}}^2=3.25\\
+    &\text{arrive before lecture starts}:\\
+    &T<X_2\\
+    \Rightarrow&T-X_2<0\\
+    &\mu_{T-X_2}=\mu_T-\mu_{X_2}=8-10=-2\\
+    &{\sigma_{T-X_2}}^2={\sigma_T}^2+{\sigma_{X_2}}^2=3.25+1=4.25\\
+    &Y=T-X_2\\
+    \Rightarrow&\mu_Y=-2\\
+    &\sigma_Y=\sqrt{4.25}=2.0616\\
+    &P(Y<0)=P(\frac{Y-(-2)}{2.0616}<\frac{0-(-2)}{2.0616})=P(z<0.9701)=0.8340\\
+    \rightarrow&P=0.8340\\
+\end{align*}
+
+\newpage
+
+\section*{Collaborators}
+
+~
+
+Frank Zhu
+
+~
+
+Jeffery Shu
+
+~
+
+Sam Sun
+\end{document}
