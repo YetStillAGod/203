@@ -1,0 +1,307 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{systeme}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{venndiagram}
+\usepackage{pgfplots}
+\usetikzlibrary{pgfplots.statistics}
+\pgfplotsset{compat=newest}
+
+\begin{document}
+\section*{Question 1}
+
+~
+
+\begin{align*}
+    &f(x)=\frac{1}{10-0}=\frac{1}{10}\\
+    &F(Y)=\frac{y}{10}\\
+\end{align*}
+
+~
+
+\subsection*{a}
+
+~
+
+\begin{align*}
+    &F(Y_L)=F(Y_1)\times F(Y_2)\times F(Y_3)\times F(Y_4)\times F(Y_5)\\
+    &=F(Y)^5\\
+    &=(\frac{y}{10})^5\\
+    &=\frac{y^5}{10^5}\\
+    &f(Y_L)=\frac{d}{dy}F(y_L)=\frac{5y^4}{10^5}\\
+    &E(Y_L)=\int_{0}^{10}yf(Y_L)dy\\
+    &=\int_{0}^{10}\frac{5y^5}{10^5}\\
+    &=\left[\frac{5y^6}{6\times10^5}\right]^{10}_{0}\\
+    &=\frac{5\times10^6}{6\times10^5}\\
+    &=8.33\\
+\end{align*}
+
+~
+
+\subsection*{b}
+
+~
+
+\begin{align*}
+    &G(Y_S)=P(Y_1\leqslant Y)\\
+    &=1-P(Y_1>Y)\\
+    &=1-P[X_1>Y,X_2>Y,X_3>Y,X_4>Y,X_5>Y]\\
+    &=1-P(X_1>Y)P(X_2>Y)P(X_3>Y)P(X_4>Y)P(X_5>Y)\\
+    &=1-(1-P(X_1\leqslant Y))(1-P(X_2\leqslant Y))(1-P(X_3\leqslant Y))(1-P(X_4\leqslant Y))(1-P(X_5\leqslant Y))\\
+    &=1-(1-F(Y))^5\\
+    &=1-(1-\frac{y}{10})^5\\
+    &g(Y_S)=\frac{d}{dy}1-(1-\frac{y}{10})^5\\
+    &=-5(1-\frac{y}{10})^4\times(-\frac{1}{10})\\
+    &=\frac{1}{2}(1-\frac{y}{10})^4\\
+    &E[Y_S]=\int_{0}^{10}y\frac{1}{2}(1-\frac{y}{10})^4dy\\
+    &=\frac{1}{2\times10^4}\int_{0}^{10}y(y-10)^4dy\\
+    &u\coloneqq y-10\\
+    &du=dy\\
+    \Rightarrow&E[Y_S]=\frac{1}{2\times10^4}\int_{-10}^{0}(u^5+10u^4)du\\
+    &=\frac{1}{2\times10^4}\frac{100000}{3}\\
+    &=1.67\\
+    &E[Y_L]-E[Y_S]=\frac{50}{6}-\frac{10}{6}=\frac{20}{3}\\
+\end{align*}
+
+~
+
+\subsection*{c}
+
+~
+
+\begin{align*}
+    &h(Y_M)=\frac{n!}{(i-1)!(n-i)!}[F(Y)]^{i-1}[1-F(Y)]^{n-i}f(Y)\\
+    &=\frac{5!}{2!2!}(\frac{y}{10})^2(1-\frac{y}{10})^2\frac{1}{10}\\
+    &=3(\frac{y}{10})^2(1-\frac{y}{10})^2\\
+    &E[Y_M]=\int_{0}^{10}yh(Y_M)dy\\
+    &=0.03\int_{0}^{10}y^3(1-\frac{y}{10})^2dy\\
+    &=0.03\times\frac{500}{3}\\
+    &=5\\
+\end{align*}
+
+~
+
+\subsection*{d}
+
+~
+
+\begin{align*}
+    &V[Y_L]=E[{Y_L}^2]-E[Y_L]^2\\
+    &=\int_{0}^{10}y^2\frac{5y^4}{10^5}dy-(\frac{50}{6})^2\\
+    &=\frac{5}{10^5}\int_{0}^{10}y^6dy-\frac{625}{9}\\
+    &=\frac{500}{7}-\frac{625}{9}\\
+    &=1.984\\
+    &\sigma=\sqrt{V[Y_L]}=\sqrt{1.984}=1.409\\
+\end{align*}
+
+\newpage
+
+\section*{Question 2}
+
+~
+
+\subsection*{a}
+
+~
+
+\begin{align*}
+    &P(X\geqslant5)=1-P(X<5)\\
+    &=1-P(X_1<5)P(X_2<5)P(X_3<5)\\
+    &=1-(P(X_i<5))^3\\
+    &=1-(\int_{1}^{5}f(x)dx)^3\\
+    &=1-(\int_{1}^{5}\frac{3}{x^4}dx)^3\\
+    &=1-(\left[-\frac{1}{x^3}\right]^5_1)^3\\
+    &=1-(\frac{124}{125})^3\\
+    &=0.238\\
+\end{align*}
+
+~
+
+\subsection*{b}
+
+~
+
+\begin{align*}
+    &F(x)=\int_{1}^{x}f(t)dt\\
+    &=\int_{1}^{x}\frac{3}{t^4}dt\\
+    &=\left[-t^{-3}\right]^x_1\\
+    &=1-\frac{1}{x^3}\\
+    &g(x_3)=\frac{3!}{2!0!}[F(x_3)]^2(\frac{3}{x^4})\\
+    &=3(1-\frac{1}{x^3})^2(\frac{3}{x^4})\\
+    &E[X_3]=\int_{1}^{\infty}xg(x_3)dx\\
+    &=\int_{1}^{\infty}x3(1-\frac{1}{x^3})^2(\frac{3}{x^4})dx\\
+    &=9\left[-\frac{1}{2x^2}-\frac{1}{8x^8}+\frac{2}{5x^5}\right]^\infty_1\\
+    &=9(\frac{1}{2}+\frac{1}{8}+\frac{2}{5})\\
+    &=\frac{81}{40}\\
+    &=2.025
+\end{align*}
+
+\newpage
+
+\section*{Question 3}
+
+~
+
+\subsection*{a}
+
+~
+
+\begin{align*}
+    &\hat{\lambda}=\overline{x}=\frac{\sum f(x)}{\sum f}\\
+    &\sum f(x)=37+2\times42+3\times30+4\times13+5\times7+6\times2+7\times1\\
+    &=317\\
+    &\sum f=18+37+42+30+13+7+2+1=150\\
+    \Rightarrow&\hat{\lambda}=\frac{317}{150}\\
+\end{align*}
+
+~
+
+\subsection*{b}
+
+~
+
+\begin{align*}
+    &V(X)=\lambda\\
+    &V(\overline{X})=\frac{\lambda}{n}\\
+    \Rightarrow&\hat{\sigma}=\sqrt{\frac{\hat{\lambda}}{n}}\\
+    &=\sqrt{\frac{\frac{317}{150}}{150}}\\
+    &=0.1187\\
+\end{align*}
+
+\newpage
+
+\section*{Question 4}
+
+~
+
+\subsection*{a}
+
+~
+
+\begin{align*}
+    &E[\frac{X_1}{n_1}-\frac{X_2}{n_2}]=\frac{1}{n_1}E[X_1]-\frac{1}{n_2}E[X_2]\\
+    &=\frac{1}{n_1}(n_1p_1)-frac{1}{n_2}(n_2p_2)\\
+    &=p_1-p_2\\
+\end{align*}
+
+~
+
+\subsection*{b}
+
+~
+
+\begin{align*}
+    &\sigma=\sqrt{V[\frac{X_1}{n_1}-\frac{X_2}{n_2}]}\\
+    &=\sqrt{\frac{1}{{n_1}^2}V(X_1)+\frac{1}{{n_2}^2}V(X_2)}\\
+    &=\sqrt{\frac{1}{{n_1}^2}n_1p_1(1-p_1)+\frac{1}{{n_2}^2}n_2p_2(1-p_2)}\\
+    &=\sqrt{\frac{p_1(1-p_1)}{n_1}+\frac{p_2(1-p_2)}{n_2}}\\
+\end{align*}
+
+~
+
+\subsection*{c}
+
+~
+
+\begin{align*}
+    &\hat{p_1}=\frac{x_1}{n_1}\\
+    &\hat{p_2}=\frac{x_2}{n_2}\\
+    &\hat{sigma}=\sqrt{\frac{\hat{p_1}(1-\hat{p_1})}{n_1}+\frac{\hat{p_2}(1-\hat{p_2})}{n_2}}\\
+    &=\sqrt{\frac{\frac{x_1}{n_1}(1-\frac{x_1}{n_1})}{n_1}+\frac{\frac{x_2}{n_2}(1-\frac{x_2}{n_2})}{n_2}}\\
+    &=\sqrt{\frac{\frac{x_1(n_1-x_1)}{{n_1}^2}}{n_1}+\frac{\frac{x_2(n_2-x_2)}{{n_2}^2}}{n_2}}\\
+    &=\sqrt{\frac{x_1(n_1-x_1)}{{n_1}^3}+\frac{x_2(n_2-x_2)}{{n_2}^3}}\\
+\end{align*}
+
+~
+
+\subsection*{d}
+
+~
+
+\begin{align*}
+    &\hat{p_1}-\hat{p_2}=\frac{x_1}{n_1}-\frac{x_2}{n_2}\\
+    &=\frac{127}{200}-\frac{176}{200}\\
+    &=-\frac{49}{200}\\
+\end{align*}
+
+~
+
+\subsection*{e}
+
+~
+
+\begin{align*}
+    &\hat{\sigma}=\sqrt{\frac{x_1(n_1-x_1)}{{n_1}^3}+\frac{x_2(n_2-x_2)}{{n_2}^3}}\\
+    &=\sqrt{\frac{127(200-127)}{200^3}+\frac{176(200-176)}{200^3}}\\
+    &=0.0411\\
+\end{align*}
+
+\newpage
+
+\section*{Question 5}
+
+~
+
+\subsection*{a}
+
+~
+
+\begin{align*}
+    &E[X]=\int_{0}^{1}xf(x)dx\\
+    &=\int_{0}^{1}x(\theta+1)x^\theta dx\\
+    &=\int_{0}^{1}(\theta+1)x^{\theta+1}dx\\
+    &=\left[\frac{\theta+1}{\theta+2}x^{\theta+2}\right]^1_0\\
+    &=\frac{\theta+1}{\theta+2}\\
+    \Rightarrow&\overline{X}=\frac{\theta+1}{\theta+2}\\
+    &\theta\overline{X}+2\overline{X}=\theta+1\\
+    &\theta=\frac{1-2\overline{X}}{\overline{X}-1}\\
+    &\overline{X}=\frac{\sum x}{n}\\
+    &=\frac{0.92+0.79+0.90+0.65+0.86+0.47+0.73+0.97+0.94+0.77}{10}\\
+    &=0.8\\
+    &\theta=\frac{1-2\times0.8}{0.8-1}=3\\
+\end{align*}
+
+~
+
+\subsection*{b}
+
+~
+
+\begin{align*}
+    &L=\prod_{i=1}^{10}(\theta+1)x_i^\theta\\
+    &=(\theta+1)^10\prod_{i=1}^{10}x_i^\theta\\
+    &\ln L=10\ln(\theta+1)+\theta\sum_{i=1}^{10}\ln x_i\\
+    &\frac{d \ln L}{theta}=\frac{10}{\theta+1}+\sum_{i=1}^{10}\ln x_i=0\\
+    &\frac{10}{\theta+1}=-\sum_{i=1}^{10}\ln x_i\\
+    &\theta=-\frac{10}{\sum_{i=1}^{10}\ln x_i}-1\\
+    &\sum_{i=1}^{10}\ln x_i=\ln0.92+\ln0.79+\ln0.90+\ln0.65\\
+    &+\ln0.86+\ln0.47+\ln0.73+\ln0.97+\ln0.94+\ln0.77\\
+    &=-2.4295\\
+    &\theta=-\frac{10}{-2.4295}-1\\
+    &=3.12\\
+\end{align*}
+
+\newpage
+
+\section*{Collaborators}
+
+~
+
+Frank Zhu
+
+~
+
+Jeffery Shu
+
+~
+
+Sam Sun
+\end{document}
